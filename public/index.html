@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <title>JSON to CSV Converter</title>
   <link rel="stylesheet" href="style.css">
-  <style >
-
-  </style>
 </head>
+
 <body>
 
   <h2>JSON to CSV</h2>
   <p>Вставте ваш json:</p>
-  
-  <textarea id="jsonInput">[]</textarea>
 
-  <input id="fileNameInput" type="text" placeholder="Enter your text here...">
-
-  <button id="convertBtn">Конвертувати в CSV</button>
-  <button id="clearBtn">Очистити</button>
-
+  <textarea id="jsonInput" placeholder="Вставте ваш JSON тут..."></textarea>
   <div id="errorLog" class="error"></div>
+
+  <input id="fileNameInput" type="text" value="exported" class="input" placeholder="Вкажіть назву файлу (без розширення)">
+
+  <div class="mycontainer">
+    <button id="convertBtn" class="button button1">Конвертувати в CSV</button>
+    <button id="clearBtn" class="button button2">Очистити</button>
+  </div>
+
 
   <script src="index.js" defer></script>
 
   </script>
 </body>
+
 </html>
