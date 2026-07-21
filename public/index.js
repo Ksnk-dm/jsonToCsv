@@ -15,7 +15,6 @@
 
     
     document.getElementById('convertBtn').addEventListener('click', async () => {
-
       try {
         parsedJson = JSON.parse(rawInput.value);
       } catch (e) {
@@ -51,6 +50,6 @@
         window.URL.revokeObjectURL(downloadUrl);
 
       } catch (err) {
-        errorLog.textContent = `Ошибка: ${err.message}`;
+        errorLog.textContent = `Помилка: ${err.message}`;
       }
     });
