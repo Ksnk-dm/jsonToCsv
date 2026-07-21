@@ -24,7 +24,6 @@ app.post('/convert', (req, res) => {
             return res.status(400).send('JSON array is empty.');
         }
 
-        // Разворачиваем все вложенные объекты
         const flattened = myData.map(item =>
             flatten(item, {
                 delimiter: '.',

@@ -1,13 +1,23 @@
-    document.getElementById('convertBtn').addEventListener('click', async () => {
+    
       const errorLog = document.getElementById('errorLog');
       errorLog.textContent = '';
       
-      const rawInput = document.getElementById('jsonInput').value;
-      const fileNameInput = document.getElementById('fileNameInput').value;
+      const rawInput = document.getElementById('jsonInput');
+      const fileNameInput = document.getElementById('fileNameInput');
+      const clearButton = document.getElementById('clearBtn');
       let parsedJson;
 
+     
+     clearButton.addEventListener('click', () => {
+        rawInput.value = '';
+        errorLog.textContent = '';
+      });
+
+    
+    document.getElementById('convertBtn').addEventListener('click', async () => {
+
       try {
-        parsedJson = JSON.parse(rawInput);
+        parsedJson = JSON.parse(rawInput.value);
       } catch (e) {
         errorLog.textContent = 'Помилка валідації';
         return;
@@ -32,7 +42,7 @@
         const downloadUrl = window.URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = downloadUrl;
-        link.download = fileNameInput + '.csv'; 
+        link.download = fileNameInput.value + '.csv'; 
         
         document.body.appendChild(link);
         link.click();
